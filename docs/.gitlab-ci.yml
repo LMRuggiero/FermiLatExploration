@@ -1,0 +1,11 @@
+image: python:3.8-slim
+
+pages:
+  script:
+  - sphinx-build -d _build/doctrees . _build/html
+  - mv _build/html public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
