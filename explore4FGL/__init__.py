@@ -1,0 +1,1 @@
+from explore4FGL.version import __version__
