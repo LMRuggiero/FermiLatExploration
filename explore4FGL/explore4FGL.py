@@ -9,6 +9,7 @@ import seaborn as sns
 import astropy.coordinates as coord
 import astropy.units as u
 import pandas as pd
+from numpy import float64
 from pandas.core.dtypes.common import is_string_dtype, is_numeric_dtype
 
 from sklearn.tree import DecisionTreeClassifier
@@ -94,7 +95,8 @@ class Source4FGLData:
         """
         logging.info(f'Remove rows with NaN value on fields {columns}')
         try:
-            df_cleaned = self.df.dropna(subset=columns)
+            not_none_columns = [col for col in columns if col is not None]
+            df_cleaned = self.df.dropna(subset=not_none_columns)
         except KeyError as e:
             logging.error(f"column {e} not present in {self.df.columns}")
             sys.exit(1)
@@ -225,7 +227,7 @@ class Source4FGLData:
         logging.info(f'Preparing the Galactic plot')
         fig, ax = plt.subplots(1, 1)
         ax = plt.axes(projection='aitoff')
-        ax.grid(b=True)
+        ax.grid(visible=True)
 
         if color is not None:
             col = df_cleaned[color_label]
@@ -294,8 +296,8 @@ class Source4FGLData:
         # remaining 70% to training
         x_train = pd.DataFrame([])
         x_test = pd.DataFrame([])
-        y_train = pd.Series()
-        y_test = pd.Series()
+        y_train = pd.Series(dtype=float64)
+        y_test = pd.Series(dtype=float)
         for source_type in possible_values_filtered:
             if source_type != remap[new_val]:
                 sub_x = x.loc[x.CLASS1 == source_type]
