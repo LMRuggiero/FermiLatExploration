@@ -1,5 +1,3 @@
-import sys
-
 from explore4FGL.explore4FGL import *
 from astropy.table import Table
 from astropy.io import fits
