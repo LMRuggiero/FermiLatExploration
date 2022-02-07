@@ -310,7 +310,7 @@ class Source4FGLData:
                 y_test = pd.concat([y_test, sub_y_test])
 
         # Create Decision Tree classifier object
-        clf = DecisionTreeClassifier(criterion='gini', max_leaf_nodes=10, min_samples_leaf=5,
+        clf = DecisionTreeClassifier(criterion='gini', max_leaf_nodes=10, min_samples_leaf=4,
                                      max_depth=4)  # Prune operation to avoid overcrowding
 
         logging.info('Generated the Decision Tree Classifier.')
