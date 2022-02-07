@@ -313,7 +313,7 @@ class Source4FGLData:
         clf = DecisionTreeClassifier(criterion='gini', max_leaf_nodes=10, min_samples_leaf=4,
                                      max_depth=4)  # Prune operation to avoid overcrowding
 
-        logging.info('Generated the Decision Tree Classifier.')
+        logging.info('Generated the Decision Tree Classifier')
 
         clf = clf.fit(x_train, y_train)
         y_pred = clf.predict(x_test)
