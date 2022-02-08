@@ -6,9 +6,19 @@ Al momento è disponibile soltanto il pacchetto [explore4FGL](https://gitlab.com
 ### Prerequisito utenti Windows
 Per utenti Windows è necessario installare la [WSL 2](https://docs.microsoft.com/it-it/windows/wsl/install)
 
+### Installazione progetto
+Fare il clone del progetto sulla directory scelta:
+```
+git clone https://gitlab.com/LMRuggiero/fermilatexploration.git
+```
+
 ### Prima esecuzione
 E' necessario creare ed attivare un ambiente virtuale coi pacchetti presenti nel [requirement.txt](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/requirements.txt)
-Per farlo basta eseguire i seguenti comandi:
+Per farlo bisogna prima entrare nella directory del progetto clonato:
+```
+cd fermilatexploration 
+```
+e successivamente eseguire i seguenti comandi:
 ```
 python3 -m venv venv 
 source venv/bin/activate
@@ -23,12 +33,16 @@ source venv/bin/activate
 ### Fine esecuzione
 Per uscire dall'ambiente virtuale
 ```
-source deactivate
+deactivate
 ```
 
 ## Utilizzo
 Un esempio di utilizzo del pacchetto explore4FGL è presente nel [main](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/main.py) del progetto.
-E' possibile ottenere altri tipi di rappresentazioni grafiche accingendo direttamente ai metodi della classe [_Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita all'interno del pacchetto.
+Per eseguire il main:
+```
+python3 main.py
+```
+E' possibile ottenere altri tipi di rappresentazioni grafiche modificando il file main.py accingendo direttamente ai metodi della classe [_Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita all'interno di questo pacchetto.
 
 ## Documentazione
 Sono consigliate le seguenti documentazioni:
