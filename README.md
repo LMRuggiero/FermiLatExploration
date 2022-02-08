@@ -15,7 +15,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### Esecuzioni successive
-Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python
+Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python:
 ```
 source venv/bin/activate
 ```
