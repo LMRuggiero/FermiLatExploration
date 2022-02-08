@@ -23,5 +23,5 @@ E' possibile ottenere altri tipi di rappresentazioni grafiche accingendo diretta
 
 ## Documentazione
 Sono consigliate le seguenti documentazioni:
-* [articolo](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/documents) per una maggior comprensione dei dati raccolti dal Fermi LAT
+* [Fermi Large Area Telescope Fourth Source Catalog](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/documents) per una maggior comprensione dei dati raccolti dal Fermi LAT
 * [documentazione del progetto](https://fermilatexploration.readthedocs.io/en/latest/index.html)
