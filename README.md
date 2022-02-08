@@ -18,4 +18,5 @@ pip install -r requirements.txt
 Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python
 
 ## Utilizzo
-Un esempio di utilizzo del pacchetto explore4FGL
+Un esempio di utilizzo del pacchetto explore4FGL è presente nel [main](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/main.py) del progetto.
+E' possibile ottenere altri tipi di rappresentazioni grafiche accingendo direttamente ai metodi della classe [_Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita all'interno del pacchetto
