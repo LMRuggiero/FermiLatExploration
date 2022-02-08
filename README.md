@@ -1,7 +1,7 @@
 # FermiLatExploration
 
 Questo progetto python permette di navigare i file fits raccolti dal telescopio Fermi Lat. Al momento è disponibile
-soltanto il pacchetto [explore4FGL](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/explore4FGL) che
+soltanto il pacchetto [_explore4FGL_](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/explore4FGL) che
 permette di analizzare i dati del catalogo 4FGL
 
 ## Installazione
@@ -21,7 +21,8 @@ git clone https://gitlab.com/LMRuggiero/fermilatexploration.git
 ### Prima esecuzione
 
 E' necessario creare ed attivare un ambiente virtuale coi pacchetti presenti
-nel [requirement.txt](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/requirements.txt)
+nel [_requirement.txt_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/requirements.txt).
+
 Per farlo bisogna prima entrare nella directory del progetto clonato:
 
 ```
@@ -55,18 +56,17 @@ deactivate
 ## Utilizzo
 
 Un esempio di utilizzo del pacchetto explore4FGL è presente
-nel [main](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/main.py) del progetto. Per eseguire il main:
+nel [_main_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/main.py) del progetto. Per eseguire il main:
 
 ```
 python3 main.py
 ```
 
-Tutti i risultati di questa run sono visibili nella folder di output che verrà creata automaticamente nella radice del
+Tutti i risultati di questa run sono visibili nella folder _output_ che verrà creata automaticamente nella radice del
 progetto.
 
-*N.B:* E' possibile ottenere altri tipi di rappresentazioni grafiche modificando il file main.py accingendo direttamente
-ai metodi della classe [_
-Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita
+__N.B.:__ E' possibile ottenere altri tipi di rappresentazioni grafiche modificando il file main.py accingendo direttamente
+ai metodi della classe [_Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita
 all'interno di questo pacchetto.
 
 ## Documentazione
