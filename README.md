@@ -1,9 +1,9 @@
 # FermiLatExploration
-Questo progetto python permette di navigare i dati del catalogo 4FGL del telescopio Fermi Lat 
-
+Questo progetto python permette di navigare i file fits raccolti dal telescopio Fermi Lat.
+Al momento è disponibile soltanto il pacchetto [explore4FGL](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/explore4FGL) che permette di analizzare i dati del catalogo 4FGL
 
 ## Installazione
-#### Prerequisito utenti Windows
+### Prerequisito utenti Windows
 Per utenti Windows è necessario installare la [WSL 2](https://docs.microsoft.com/it-it/windows/wsl/install)
 
 ### Prima esecuzione
@@ -15,4 +15,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### Esecuzioni successive
-Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python 
+Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python
+
+## Utilizzo
+Un esempio di utilizzo del pacchetto explore4FGL
