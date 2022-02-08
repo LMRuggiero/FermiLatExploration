@@ -16,6 +16,15 @@ pip install -r requirements.txt
 ```
 ### Esecuzioni successive
 Ogni volta che si riapre il progetto bisogna riattivare l'ambiente python
+```
+source venv/bin/activate
+```
+
+### Fine esecuzione
+Per uscire dall'ambiente virtuale
+```
+source deactivate
+```
 
 ## Utilizzo
 Un esempio di utilizzo del pacchetto explore4FGL è presente nel [main](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/main.py) del progetto.
@@ -23,5 +32,5 @@ E' possibile ottenere altri tipi di rappresentazioni grafiche accingendo diretta
 
 ## Documentazione
 Sono consigliate le seguenti documentazioni:
-* [Fermi Large Area Telescope Fourth Source Catalog](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/documents) per una maggior comprensione dei dati raccolti dal Fermi LAT
+* [Fermi Large Area Telescope Fourth Source Catalog](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/documents/1902.10045.pdf) per una maggior comprensione dei dati raccolti dal Fermi LAT
 * [documentazione del progetto](https://fermilatexploration.readthedocs.io/en/latest/index.html)
