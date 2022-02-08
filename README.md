@@ -22,4 +22,6 @@ Un esempio di utilizzo del pacchetto explore4FGL è presente nel [main](https://
 E' possibile ottenere altri tipi di rappresentazioni grafiche accingendo direttamente ai metodi della classe [_Source4FGLData_](https://gitlab.com/LMRuggiero/fermilatexploration/-/blob/main/explore4FGL/explore4FGL.py) definita all'interno del pacchetto.
 
 ## Documentazione
-E' consigliata la lettura del seguente articolo
+Sono consigliate le seguenti documentazioni:
+*[articolo](https://gitlab.com/LMRuggiero/fermilatexploration/-/tree/main/documents) per una maggior comprensione dei dati raccolti dal Fermi LAT
+*[documentazione del progetto](https://fermilatexploration.readthedocs.io/en/latest/index.html)
