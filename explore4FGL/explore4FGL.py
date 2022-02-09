@@ -3,6 +3,8 @@ import sys
 import warnings
 
 import numpy as np
+from astropy.io import fits
+from astropy.table import Table
 from matplotlib import pyplot as plt
 import seaborn as sns
 
@@ -23,20 +25,6 @@ import pandas
 logging.basicConfig(level=logging.INFO)
 
 output_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) + '/output'
-
-
-def to_source_4fgl_data(astropy_table):
-    """
-    Get a Source4FGLData object from an astropy Table
-    :param astropy_table: astropy.table.Table
-        astropy table to convert
-    :return: Source4FGLData
-        a Source4FGLData object containing only one-dimensional columns
-    """
-    # Filter only 1D columns
-    columns_1d = [col1D for col1D in astropy_table.colnames if len(astropy_table[col1D].shape) <= 1]
-    logging.info(f'Used only 1D columns')
-    return Source4FGLData(astropy_table[columns_1d].to_pandas())
 
 
 def save_or_show_plot(savefig=False, title='Title'):
@@ -85,6 +73,22 @@ class Source4FGLData:
             A copy of the source dataframe
         """
         return self._df.copy()
+
+    @classmethod
+    def from_4fgl_file(cls, fits_path):
+        """
+        Get a Source4FGLData object from a 4FGL file fits
+        :param fits_path: str
+            file fits path
+        :return: Source4FGLData
+            a Source4FGLData object containing only one-dimensional columns
+        """
+        with fits.open(fits_path) as hdu_list:
+            astropy_table = Table(hdu_list[1].data)
+        # Filter only 1D columns
+        columns_1d = [col1D for col1D in astropy_table.colnames if len(astropy_table[col1D].shape) <= 1]
+        logging.info(f'Used only 1D columns')
+        return cls(astropy_table[columns_1d].to_pandas())
 
     def _clean_df(self, columns):
         """

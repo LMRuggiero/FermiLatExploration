@@ -5,8 +5,7 @@ from astropy.io import fits
 
 def main(data_path):
     # Get only the first data fits
-    with fits.open(data_path) as hdu_list:
-        lat_point_source_catalog = to_source_4fgl_data(Table(hdu_list[1].data))
+    lat_point_source_catalog = Source4FGLData.from_4fgl_file(data_path)
 
     # Get the histogram for Variability_Index field
     lat_point_source_catalog.get_hist(colname='Variability_Index', title='distribution Variability Index', savefig=True,

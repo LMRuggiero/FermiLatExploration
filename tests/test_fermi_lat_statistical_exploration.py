@@ -8,14 +8,6 @@ from explore4FGL.explore4FGL import *
 
 class TestUtilsMethods(unittest.TestCase):
 
-    def test_source_4fgl_data(self):
-        """
-        Check if the method correctly convert an astropy table in a Source4FGLData object
-        """
-        with fits.open(data_path) as list_of_hdu:
-            test_source_4fgl = to_source_4fgl_data(Table(list_of_hdu[1].data))
-        self.assertIsInstance(test_source_4fgl, Source4FGLData)
-
     def test_save_or_show_plot(self):
         """
         Check if the method save the plot image in the right output folder
@@ -43,6 +35,13 @@ except Exception as e:
 
 
 class TestSource4FGLData(unittest.TestCase):
+
+    def test_from_astropy_table(self):
+        """
+        Check if the method correctly convert an astropy table in a Source4FGLData object
+        """
+        test_source_4fgl = Source4FGLData.from_4fgl_file(data_path)
+        self.assertIsInstance(test_source_4fgl, Source4FGLData)
 
     def test_get_hist(self):
         """
