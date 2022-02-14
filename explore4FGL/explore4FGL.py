@@ -24,23 +24,7 @@ import pandas
 
 logging.basicConfig(level=logging.INFO)
 
-output_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) + '/output'
-
-
-def save_or_show_plot(savefig=False, title='Title'):
-    """
-    Shows or saves the plot in the output folder
-    :param savefig: boolean
-        if True save the figure in the output directory, else only shows it
-    :param title: str
-        title of the plot (default='Title')
-    """
-    if savefig:
-        plt.savefig(f"{output_path}/{title}.png")
-        logging.info(f'Image saved in {output_path}/{title}.png')
-    else:
-        logging.info(f'The image {title} is shown')
-        plt.show()
+output_path = f"{os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))}/output"
 
 
 class Source4FGLData:
@@ -119,6 +103,22 @@ class Source4FGLData:
                           f"{self.df.select_dtypes(include=np.number).columns}")
             sys.exit(2)
 
+    @staticmethod
+    def save_or_show_plot(savefig=False, title='Title'):
+        """
+            Shows or saves the plot in the output folder
+            :param savefig: boolean
+                if True save the figure in the output directory, else only shows it
+            :param title: str
+                title of the plot (default='Title')
+        """
+        if savefig:
+            plt.savefig(f"{output_path}/{title}.png")
+            logging.info(f'Image saved in {output_path}/{title}.png')
+        else:
+            logging.info(f'The image {title} is shown')
+            plt.show()
+
     def get_hist(self, colname, title='Histogram', savefig=False, xlog=False, ylog=False, **kwargs):
         """
         Constructs the histogram of a dataframe field
@@ -151,7 +151,7 @@ class Source4FGLData:
             plt.yscale('log')
 
         logging.info('Histogram is ready')
-        save_or_show_plot(savefig=savefig, title=title)
+        self.save_or_show_plot(savefig=savefig, title=title)
 
     def get_plot(self, col_x, col_y, title=None, savefig=False, xlog=False, ylog=False, **kwargs):
         """
@@ -191,7 +191,7 @@ class Source4FGLData:
         plt.ylabel(col_y)
 
         logging.info('Plot is ready')
-        save_or_show_plot(savefig=savefig, title=title)
+        self.save_or_show_plot(savefig=savefig, title=title)
 
     def galactic_visualization_plot(self, coord_type='equatorial',
                                     title='Galactic Map',
@@ -251,7 +251,7 @@ class Source4FGLData:
         ax.set_title(title)
 
         logging.info('Galactic Map is ready')
-        save_or_show_plot(savefig=savefig, title=title)
+        self.save_or_show_plot(savefig=savefig, title=title)
 
     def predict_classification(self, threshold=10):
         """
@@ -346,7 +346,7 @@ class Source4FGLData:
         plt.legend()
 
         logging.info('The learning curves plot is ready')
-        save_or_show_plot(True, "DT_Accuracy")
+        self.save_or_show_plot(True, "DT_Accuracy")
 
         x_unassociated_with_na = df[df['CLASS1'] == remap[new_val]].select_dtypes(exclude='object')
         x_unassociated = x_unassociated_with_na.fillna(x.mean())
