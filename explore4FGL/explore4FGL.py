@@ -62,10 +62,10 @@ class Source4FGLData:
     def from_4fgl_file(cls, fits_path):
         """
         Get a Source4FGLData object from a 4FGL file fits
-        :param fits_path: str
-            file fits path
-        :return: Source4FGLData
-            a Source4FGLData object containing only one-dimensional columns
+        :param fits_path: file fits path
+        :type fits_path: str
+        :return: a Source4FGLData object containing only one-dimensional columns
+        :rtype: Source4FGLData
         """
         with fits.open(fits_path) as hdu_list:
             astropy_table = Table(hdu_list[1].data)
