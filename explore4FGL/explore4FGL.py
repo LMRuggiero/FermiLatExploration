@@ -106,11 +106,11 @@ class Source4FGLData:
     @staticmethod
     def save_or_show_plot(savefig=False, title='Title'):
         """
-            Shows or saves the plot in the output folder
-            :param savefig: boolean
-                if True save the figure in the output directory, else only shows it
-            :param title: str
-                title of the plot (default='Title')
+        Shows or saves the plot in the output folder
+        :param savefig: boolean
+            if True save the figure in the output directory, else only shows it
+        :param title: str
+            title of the plot (default='Title')
         """
         if savefig:
             plt.savefig(f"{output_path}/{title}.png")
@@ -155,7 +155,7 @@ class Source4FGLData:
 
     def get_plot(self, col_x, col_y, title=None, savefig=False, xlog=False, ylog=False, **kwargs):
         """
-        Plot Variability Index 2 month vs Variability Index 12 month
+        Get the plot of the data by relating two numeric fields of the dataframe
         :param col_x: str
             The name variable of the abscissa. The column must be numeric
         :param col_y: str
