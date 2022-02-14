@@ -315,7 +315,7 @@ class Source4FGLData:
 
         # Create Decision Tree classifier object
         clf = DecisionTreeClassifier(criterion='gini', max_leaf_nodes=10, min_samples_leaf=4,
-                                     max_depth=4)  # Prune operation to avoid overcrowding
+                                     max_depth=4)  # Prune operation to avoid overfitting
 
         logging.info('Generated the Decision Tree Classifier')
 
