@@ -53,8 +53,8 @@ class Source4FGLData:
     def df(self):
         """
         With this workaround we are sure not to modify the dataframe parameter of the class in any way
-        :return: pandas DataFrame
-            A copy of the source dataframe
+        :return: A copy of the source dataframe
+        :rtype: pandas.DataFrame
         """
         return self._df.copy()
 
